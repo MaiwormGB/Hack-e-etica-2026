@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salva Petropolis</title>
+    <title>Salva Petrópolis</title>
     <link rel="stylesheet"href="https://unpkg.com/leaflet/dist/leaflet.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="acervo/map-pin-alt-svgrepo-com.svg">
@@ -24,15 +24,14 @@
 
             <input class="pesquisa" type="text" id="pesquisa" placeholder="Pesquisa">
 
-            <button onclick="buscarLocal()" id="buscar" >Buscar</button>
-
             <div class="buttons">
 
+                <button onclick="buscarLocal()" id="buscar" >Buscar</button>
                 <button onclick="mostrarPesquisa()">Pesquisar</button>
-                <button>Lista de <br> problemas / soluções</button>
-                <button>Quem somos</button>
+                <button onclick="mudarLista()">Lista</button>
+                <button onclick="mudarSobre()">Quem somos</button>
 
-                <svg id="logo" width="120" height="100%">
+                <svg id="logo" width="82" height="100%">
                     <image 
                         href="acervo/map-pin-alt-svgrepo-com.svg"
                         height="100%">

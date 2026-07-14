@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salva Petrópolis</title>
+    <link rel="stylesheet" href="../styles/lista.css">
+    <link rel="icon" href="../acervo/map-pin-alt-svgrepo-com.svg">
+</head>
+<body>
+    
+    <div class="main">
+
+        <div class="header">
+
+
+            <div class="titulo">
+
+                <h1>Salva Petrópolis</h1>
+                <h3>Da comunidade, pra comunidade</h3>
+
+            </div>
+
+            <input class="pesquisa" type="text" id="pesquisa" placeholder="Pesquisa">
+
+            <div class="buttons">
+
+                <button onclick="buscarLocal()" id="buscar" >Buscar</button>
+                <button onclick="mostrarPesquisa()">Pesquisar</button>
+                <button onclick="mudarLista()">Voltar</button>
+
+                <svg id="logo" width="82" height="100%">
+                    <image 
+                        href="../acervo/map-pin-alt-svgrepo-com.svg"
+                        height="100%">
+                    </image>
+                </svg>
+
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div id="lista">
+
+                <div id="problemas">
+
+                    <h3>Problemas</h3>
+
+                    <div class="problema">
+
+                        <h4 class="problema_nome">NOME</h4>
+                        
+                        <p class=""></p>
+
+                    </div>
+
+                </div>
+
+                <div id="solucoes">
+
+                    <h3>Soluções</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <script src="../scripts/lista.js"></script>
+
+</body>
+</html>

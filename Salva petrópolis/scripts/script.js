@@ -226,6 +226,16 @@ function salvar(){
     const formTipos = document.getElementById("form_tipos").value;
     const formDetalhamento = document.getElementById("detalhamento").value;
 
+    if (
+    formTitulo === "" ||
+    formInput === "" ||
+    formTipos === "" ||
+    formDetalhamento === ""
+    ) {
+    alert("Preencha todos os campos antes de salvar.");
+    return;
+    }
+
     novoForm.titulo = formInput;
     novoForm.arquetipo = formTitulo
     novoForm.tipo = formTipos;
@@ -334,6 +344,17 @@ function mostrarPesquisa(){
 
 }
 
+function mudarLista(){
+
+    window.location.href = "pages/lista.html";
+
+}
+
+function mudarSobre(){
+
+    window.location.href = "pages/sobre.html"
+
+}
 
 async function buscarLocal(){
 

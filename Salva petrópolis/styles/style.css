@@ -17,7 +17,7 @@
 body{
 
     width: 100vw;
-    height: 100vh;
+    min-height:100dvh;
     background-color: var(--cor-1);
 
 }
@@ -35,7 +35,7 @@ body{
 
 #map{
 
-    height:85vh;
+    height:82vh;
     width:100%;
     position: absolute;
     bottom: 0;
@@ -44,9 +44,10 @@ body{
 
 .header{
 
-    height: 12vh;
+    height: 15vh;
     display: flex;
     justify-content: space-between;
+    gap:20px;
     align-items: center;
     padding: 10px 20px;
     background-color: var(--cor-2);
@@ -57,6 +58,7 @@ body{
 .titulo{
 
     height: 100%;
+    min-width: 25%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -66,16 +68,14 @@ body{
 }
 
 h1{
-
-    font-size: 30pt;
-
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    text-align: center;
 }
 
 h3{
-
-    font-size: 17pt;
+    font-size: clamp(1rem, 2vw, 1.4rem);
     color: var(--cor-1);
-
+    text-align: center;
 }
 
 
@@ -83,7 +83,8 @@ h3{
 .pesquisa{
 
     height: 50%;
-    width: 500px;
+    width: 30%;
+    max-width: 500px;
     background-color: var(--cor-1);
     border-radius: 30px;
     border-left: #1c676c solid 10px;
@@ -91,16 +92,19 @@ h3{
 
 }
 
-#busca{
+#buscar{
 
     display: none;
+
 
 }
 
 .buttons{
 
     height: 100%;
+    width: 50%;
     display: flex;
+    justify-content: flex-end;
     gap: 15px;
 
 }
@@ -108,10 +112,11 @@ h3{
 button{
 
     height: 100%;
-    min-width: 180px;
+    width: 20%;
+    min-width: 90px;
     padding: 10px;
     color: var(--cor-2);
-    font-size: 15pt;
+    font-size: clamp(0.6rem, 1.5vw, 1.2rem);
     border: none;
     background-color: var(--cor-1);
     border-left: #1c676c solid 5px;
@@ -134,8 +139,10 @@ button:hover{
 
     position: absolute;
     z-index: 1000;
-    width: 600px;
-    height: 700px;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    max-height: 75vh;
     background-color: var(--cor-form-1);
     right: 0;
     bottom: 0;
@@ -169,8 +176,9 @@ input{
 
 textarea{
 
-    width: 500px;
-    height: 300px;
+    width: 90%;
+    height: 30%;
+    max-height: 300px;
     resize: none;
     border-radius: 20px;
     padding: 10px;
@@ -296,3 +304,4 @@ select{
     border-radius: 10px;
 
 }
+
