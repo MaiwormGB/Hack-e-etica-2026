@@ -467,8 +467,6 @@ estrelas.forEach(estrela => {
 
 });
 
-carregarOcorrencias();
-
 function sairForm(){
 
     const formulario = document.getElementById("formulario");
