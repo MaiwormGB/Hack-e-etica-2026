@@ -99,6 +99,11 @@ h3{
 
 }
 
+#logo {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
 .buttons{
 
     height: 100%;
@@ -113,7 +118,7 @@ button{
 
     height: 100%;
     width: 20%;
-    min-width: 90px;
+    min-width: 120px;
     padding: 10px;
     color: var(--cor-2);
     font-size: clamp(0.6rem, 1.5vw, 1.2rem);
@@ -305,3 +310,114 @@ select{
 
 }
 
+@media screen and (max-width: 768px) {
+    
+    .header{
+
+        height: 20vh;
+        z-index: 9999;
+        align-items: start;
+
+    }
+
+    #map{
+
+        height: 77vh;
+
+    }
+
+    .buttons{
+
+        flex-direction: column;
+        width: 30%;
+        align-items: end;
+        justify-content: flex-start;
+
+
+
+    }
+
+    button{
+
+        width: 100%;
+        font-size: 13pt;
+        max-height: 50px;
+
+    }
+
+    .titulo{
+
+        width: 40%;
+        height: 50%;
+
+    }
+
+
+    #logo{
+
+        position: absolute;
+        height: 10%;
+        left: 16%;
+        top: 11%;
+    }
+
+    .pesquisa{
+
+        height: 20%;
+
+    }
+
+}
+
+@media screen and (max-width: 425px){
+
+
+    .header{
+
+        height: 22vh;
+
+    }
+
+    #map{
+
+        height: 75vh;
+
+    }
+
+    .buttons{
+
+        width: 50%;
+
+    }
+
+    #logo{
+
+        top: 13%;
+        left: 13%;
+
+    }
+
+    #formulario{
+
+        width: 90%;
+
+    }
+
+    select{
+
+        min-width: none;
+        width: 90%;
+
+    }
+
+    .pesquisa{
+
+        position: absolute;
+        right: 5%;
+        height: 3%;
+        top: 140px;
+        width: 38%;
+
+    }
+
+}

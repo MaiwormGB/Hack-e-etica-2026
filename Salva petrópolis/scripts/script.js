@@ -76,6 +76,36 @@ function carregarOcorrencias(){
 
 }
 
+async function carregarOcorrenciasIniciais() {
+
+    const resposta = await fetch("../dados/marcadores.json");
+    const dados = await resposta.json();
+
+    ocorrencias = [
+        ...dados,
+        ...ocorrencias
+    ];
+
+    carregarOcorrencias();
+}
+
+carregarOcorrenciasIniciais();
+
+async function buscarBairro(lat, lng){
+
+    const resposta = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18`
+    );
+
+    const dados = await resposta.json();
+
+    return dados.address.suburb ||
+           dados.address.neighbourhood ||
+           dados.address.village ||
+           "Não identificado";
+
+}
+
 let posicaoSelecionada = null;
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -90,6 +120,8 @@ const formProblema = {
         "Risco de desabamento",
         "Risco de alagamento",
         "Infraestrutura publica danificada",
+        "Desaparecimento",
+        "Abuso animal",
         "Criminalidade",
         "Outro"]
 
@@ -207,13 +239,14 @@ function abrirForm(){
 
 }
 
-function salvar(){
+async function salvar(){
 
     const novoForm = {
 
         "titulo":"",
         "arquetipo":"",
         "tipo":"",
+        "bairro":"",
         "detalhamento":"",
         "latitude": 0,
         "longitude": 0,
@@ -243,6 +276,10 @@ function salvar(){
     novoForm.latitude = posicaoSelecionada.lat;
     novoForm.longitude = posicaoSelecionada.lng;
     novoForm.importancia = importancia;
+    novoForm.bairro = await buscarBairro(
+    novoForm.latitude,
+    novoForm.longitude
+);
 
     const icone = val === 1
         ? iconeProblema
@@ -256,7 +293,7 @@ function salvar(){
 
     mapa.flyTo(
         marcador.getLatLng(),
-        16
+        18
     );
 
     });
@@ -323,19 +360,34 @@ function mostrarPesquisa(){
 
     console.log(val2);
 
+    const sobreBtn = document.getElementById("sobreBtn");
+    const listaBtn = document.getElementById("listaBtn");
+    const pesquisaBtn = document.getElementById("pesquisaBtn");
     const pesquisa = document.getElementById("pesquisa");
     const buscar = document.getElementById("buscar");
 
     if (val2 === 2){
 
+        if(window.innerWidth <= 1024){
+            sobreBtn.style.display = "block"
+            listaBtn.style.display = "block"
+        }
+
         pesquisa.style.display = "none"
         buscar.style.display = "none"
+        pesquisaBtn.textContent = "pesquisar"
         val2 = 1;
 
     }else{
 
+        if (window.innerWidth <= 1024){
+            sobreBtn.style.display = "none"
+            listaBtn.style.display = "none"
+        }
+
         pesquisa.style.display = "block"
         buscar.style.display = "block"
+        pesquisaBtn.textContent = "voltar"
         val2 = 2;
 
     }

@@ -20,23 +20,28 @@
                 <h1>Salva Petrópolis</h1>
                 <h3>Da comunidade, pra comunidade</h3>
 
+
+
             </div>
+
+
 
             <input class="pesquisa" type="text" id="pesquisa" placeholder="Pesquisa">
 
             <div class="buttons">
 
                 <button onclick="buscarLocal()" id="buscar" >Buscar</button>
-                <button onclick="mostrarPesquisa()">Pesquisar</button>
-                <button onclick="mudarLista()">Lista</button>
-                <button onclick="mudarSobre()">Quem somos</button>
+                <button onclick="mostrarPesquisa()" id="pesquisaBtn">Pesquisar</button>
+                <button onclick="mudarLista()" id="listaBtn">Lista</button>
+                <button onclick="mudarSobre()" id="sobreBtn">Quem somos</button>
 
-                <svg id="logo" width="82" height="100%">
+                <svg id="logo" viewBox="0 0 24 24" height="100%">
                     <image 
                         href="acervo/map-pin-alt-svgrepo-com.svg"
                         height="100%">
                     </image>
                 </svg>
+
 
             </div>
 
