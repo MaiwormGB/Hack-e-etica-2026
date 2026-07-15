@@ -78,7 +78,7 @@ function carregarOcorrencias(){
 
 async function carregarOcorrenciasIniciais() {
 
-    const resposta = await fetch("dados/marcadores.json");
+    const resposta = await fetch("Hack-e-etica-2026/dados/marcadores.json");
     const dados = await resposta.json();
 
     ocorrencias = [
